@@ -3,12 +3,17 @@ const app =express();
 const path = require('path');
 
 const staticPath =path.join(__dirname,"../public");
+// to set view engine
+app.set('view engine', 'hbs');
 
+app.get("/",(re,res)=>{
+    res.render('index')
+})
 // built in middleware
-app.use(express.static(staticPath));
+// app.use(express.static(staticPath));
 app.get("/",(req,res)=>{
     // res.write("hello to / <br>");
-    // res.write();
+    res.write("hello");
     // res.send("<h1>hello to / Again </h1>");
 
 
